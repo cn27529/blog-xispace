@@ -37,8 +37,10 @@ ga('send', 'pageview');
 <meta property="og:image" content="https://blog.xispace.app/images/ffempg-install.png">
 <meta property="og:image" content="https://blog.xispace.app/images/ffempg-installed.png">
 <meta property="og:image" content="https://blog.xispace.app/images/ffempg-convert-mov-mp4.png">
+<meta property="og:image" content="https://blog.xispace.app/images/ffmpeg-363.7MB.png">
+<meta property="og:image" content="https://blog.xispace.app/images/ffmpeg-37.6MB.png">
 <meta property="article:published_time" content="2023-05-14T12:49:00.000Z">
-<meta property="article:modified_time" content="2024-02-24T11:54:35.456Z">
+<meta property="article:modified_time" content="2024-02-24T12:18:31.139Z">
 <meta property="article:author" content="cn27529">
 <meta property="article:tag" content="ffempg">
 <meta property="article:tag" content="mov-convert-mp4">
@@ -187,14 +189,16 @@ ga('send', 'pageview');
 <h2 id="試一下"><a href="#試一下" class="headerlink" title="試一下"></a>試一下</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i hexo-ep1-video.mov -vcodec h264 hexo-ep1-video.mp4</span><br></pre></td></tr></table></figure>
 <p>也跑了小陣子，mac老了XD<br><img src="/images/ffempg-convert-mov-mp4.png" alt="ffempg-convert-mov-mp4"><br>下指令的感覺就是爽。</p>
 <h2 id="收工。"><a href="#收工。" class="headerlink" title="收工。"></a>收工。</h2><hr>
-<h2 id="無損壓縮視訊"><a href="#無損壓縮視訊" class="headerlink" title="無損壓縮視訊"></a>無損壓縮視訊</h2><p>ffmpeg的 -i 輸入.avi -s 720×480 -b:v 2000k -v編解碼器 h264 -r 25 輸出.mp4<br>這些命令的詳細解釋介紹如下：<br>-i：表示輸入的視頻文件，後面的input.mp4是帶擴展名的視頻名稱。<br>-s：導出分辨率。 為了保持高質量，您最好保持原始分辨率。<br>-b:v：導出視頻的平均比特率。 影響大小的最重要參數。<br>-vcodec：導出編解碼器。 如果您還想更改輸出格式，只需輸入“-c copy”即可。<br>-r：表示幀率。 推薦的幀率為 25fps。<br>然後就可以在原文件夾中找到壓縮後的視頻了。</p>
+<h2 id="無損壓縮視訊"><a href="#無損壓縮視訊" class="headerlink" title="無損壓縮視訊"></a>無損壓縮視訊</h2><h3 id="ffmpeg的-i-INPUT-s-720×480-b-v-2000k-vcodec-h264-r-25-OUTPUT"><a href="#ffmpeg的-i-INPUT-s-720×480-b-v-2000k-vcodec-h264-r-25-OUTPUT" class="headerlink" title="ffmpeg的 -i INPUT -s 720×480 -b:v 2000k -vcodec h264 -r 25 OUTPUT"></a>ffmpeg的 -i INPUT -s 720×480 -b:v 2000k -vcodec h264 -r 25 OUTPUT</h3><p>這些命令的詳細解釋介紹如下：<br>-i：表示輸入的視頻文件，後面的INPUT/OUTPUT是帶擴展名的視頻名稱。<br>-s：導出分辨率。為了保持高質量，您最好保持原始分辨率。<br>-b:v：導出視頻的平均比特率。 影響大小的最重要參數。輸入2000k，實測363MB輸出只剩37MB。<br>-vcodec：導出編解碼器。 如果你只更改輸出格式avi to mp4，那就只要“-c copy”即可。<br>-r：表示幀率。 推薦的幀率為25。<br>然後就可以在原文件夾中找到壓縮後的視頻了。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i INPUT -b:v 2000k -vcodec h264 -r 25 OUTPUT</span><br></pre></td></tr></table></figure>
+<h3 id="壓縮前"><a href="#壓縮前" class="headerlink" title="壓縮前"></a>壓縮前</h3><p><img src="/images/ffmpeg-363.7MB.png" alt="ffempg-file-resize"></p>
+<h3 id="壓縮後"><a href="#壓縮後" class="headerlink" title="壓縮後"></a>壓縮後</h3><p><img src="/images/ffmpeg-37.6MB.png" alt="ffempg-file-resize"><br>少了326.1MB，爽喇！</p>
 <h2 id="無損壓縮音訊"><a href="#無損壓縮音訊" class="headerlink" title="無損壓縮音訊"></a>無損壓縮音訊</h2><p>若需要無損壓縮視訊推薦使用 FLAC 格式。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i INPUT -vn -c:a flac OUTPUT</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.xispace.app/2023/05/ffempg-install/" data-id="clt00yyrs009ks10mfwztcqa4" class="article-share-link">Share</a>
+      <a data-url="https://blog.xispace.app/2023/05/ffempg-install/" data-id="clt01slci007yli0mfowfbq5g" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ffempg/" rel="tag">ffempg</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mov-convert-mp4/" rel="tag">mov-convert-mp4</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/terminal/" rel="tag">terminal</a></li></ul>
