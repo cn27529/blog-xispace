@@ -38,7 +38,7 @@ ga('send', 'pageview');
 <meta property="og:image" content="https://blog.xispace.app/images/ffempg-installed.png">
 <meta property="og:image" content="https://blog.xispace.app/images/ffempg-convert-mov-mp4.png">
 <meta property="article:published_time" content="2023-05-14T12:49:00.000Z">
-<meta property="article:modified_time" content="2023-05-14T13:13:22.932Z">
+<meta property="article:modified_time" content="2024-02-24T10:44:55.246Z">
 <meta property="article:author" content="cn27529">
 <meta property="article:tag" content="ffempg">
 <meta property="article:tag" content="mov-convert-mp4">
@@ -186,11 +186,16 @@ ga('send', 'pageview');
 <p><img src="/images/ffempg-install.png" alt="ffempg install"><br>等了一陣子…<br><img src="/images/ffempg-installed.png" alt="ffempg installed"><br>終於裝完了。可能我的mac比較慢等了10分鐘XD###</p>
 <h2 id="試一下"><a href="#試一下" class="headerlink" title="試一下"></a>試一下</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i hexo-ep1-video.mov -vcodec h264 hexo-ep1-video.mp4</span><br></pre></td></tr></table></figure>
 <p>也跑了小陣子，mac老了XD<br><img src="/images/ffempg-convert-mov-mp4.png" alt="ffempg-convert-mov-mp4"><br>下指令的感覺就是爽。</p>
-<h2 id="收工。"><a href="#收工。" class="headerlink" title="收工。"></a>收工。</h2>
+<h2 id="收工。"><a href="#收工。" class="headerlink" title="收工。"></a>收工。</h2><hr>
+<h2 id="無損壓縮視訊"><a href="#無損壓縮視訊" class="headerlink" title="無損壓縮視訊"></a>無損壓縮視訊</h2><p>若需要無損壓縮視訊推薦使用 H.264 / AVC 的無損模式，你可使用使用 FFmpeg 的 libx264 或是 libx264rgb 編碼器，並搭配 -qp 0 來輸出無損 H.264 視訊。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i INPUT -an -c:v libx264 -qp:v 0 -preset:v ultrafast OUTPUT</span><br></pre></td></tr></table></figure>
+<p>如果只是要輸出一個暫存檔給其他工具編輯，則建議使用 -preset:v ultrafast 來減少 CPU 負擔，雖然會輸出更巨大的檔案，但可以節省許多時間。</p>
+<h2 id="無損壓縮音訊"><a href="#無損壓縮音訊" class="headerlink" title="無損壓縮音訊"></a>無損壓縮音訊</h2><p>若需要無損壓縮視訊推薦使用 FLAC 格式。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i INPUT -vn -c:a flac OUTPUT</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.xispace.app/2023/05/ffempg-install/" data-id="clrt7b6100063120m6s4215qm" class="article-share-link">Share</a>
+      <a data-url="https://blog.xispace.app/2023/05/ffempg-install/" data-id="clszygxdk0065km0m25tfgvty" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ffempg/" rel="tag">ffempg</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mov-convert-mp4/" rel="tag">mov-convert-mp4</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/terminal/" rel="tag">terminal</a></li></ul>

@@ -177,11 +177,16 @@ ga('send', 'pageview');
 <p><img src="/images/ffempg-install.png" alt="ffempg install"><br>等了一陣子…<br><img src="/images/ffempg-installed.png" alt="ffempg installed"><br>終於裝完了。可能我的mac比較慢等了10分鐘XD###</p>
 <h2 id="試一下"><a href="#試一下" class="headerlink" title="試一下"></a>試一下</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i hexo-ep1-video.mov -vcodec h264 hexo-ep1-video.mp4</span><br></pre></td></tr></table></figure>
 <p>也跑了小陣子，mac老了XD<br><img src="/images/ffempg-convert-mov-mp4.png" alt="ffempg-convert-mov-mp4"><br>下指令的感覺就是爽。</p>
-<h2 id="收工。"><a href="#收工。" class="headerlink" title="收工。"></a>收工。</h2>
+<h2 id="收工。"><a href="#收工。" class="headerlink" title="收工。"></a>收工。</h2><hr>
+<h2 id="無損壓縮視訊"><a href="#無損壓縮視訊" class="headerlink" title="無損壓縮視訊"></a>無損壓縮視訊</h2><p>若需要無損壓縮視訊推薦使用 H.264 / AVC 的無損模式，你可使用使用 FFmpeg 的 libx264 或是 libx264rgb 編碼器，並搭配 -qp 0 來輸出無損 H.264 視訊。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i INPUT -an -c:v libx264 -qp:v 0 -preset:v ultrafast OUTPUT</span><br></pre></td></tr></table></figure>
+<p>如果只是要輸出一個暫存檔給其他工具編輯，則建議使用 -preset:v ultrafast 來減少 CPU 負擔，雖然會輸出更巨大的檔案，但可以節省許多時間。</p>
+<h2 id="無損壓縮音訊"><a href="#無損壓縮音訊" class="headerlink" title="無損壓縮音訊"></a>無損壓縮音訊</h2><p>若需要無損壓縮視訊推薦使用 FLAC 格式。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i INPUT -vn -c:a flac OUTPUT</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.xispace.app/2023/05/ffempg-install/" data-id="clrt7b6100063120m6s4215qm" class="article-share-link">Share</a>
+      <a data-url="https://blog.xispace.app/2023/05/ffempg-install/" data-id="clszygxdk0065km0m25tfgvty" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ffempg/" rel="tag">ffempg</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mov-convert-mp4/" rel="tag">mov-convert-mp4</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/terminal/" rel="tag">terminal</a></li></ul>
@@ -242,7 +247,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.xispace.app/2023/05/%E7%94%A8-Hexo%EF%BC%8C%E5%B0%87%E4%BD%A0%E7%9A%84%E6%83%B3%E6%B3%95%E4%BB%A5%E6%9C%80%E7%B0%A1%E6%BD%94%E3%80%81%E6%9C%80%E7%BE%8E%E9%BA%97%E7%9A%84%E6%96%B9%E5%BC%8F%E5%91%88%E7%8F%BE%E7%B5%A6%E4%B8%96%E7%95%8C/" data-id="clrt7b62h009y120m72472o35" class="article-share-link">Share</a>
+      <a data-url="https://blog.xispace.app/2023/05/%E7%94%A8-Hexo%EF%BC%8C%E5%B0%87%E4%BD%A0%E7%9A%84%E6%83%B3%E6%B3%95%E4%BB%A5%E6%9C%80%E7%B0%A1%E6%BD%94%E3%80%81%E6%9C%80%E7%BE%8E%E9%BA%97%E7%9A%84%E6%96%B9%E5%BC%8F%E5%91%88%E7%8F%BE%E7%B5%A6%E4%B8%96%E7%95%8C/" data-id="clszygxes00a2km0mfz05hsdo" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2%E6%A1%86%E6%9E%B6/" rel="tag">博客框架</a></li></ul>
@@ -317,7 +322,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.xispace.app/2023/05/New-Hexo-app-for-ChatGPT/" data-id="clrt7b60a003w120m4vbj66dr" class="article-share-link">Share</a>
+      <a data-url="https://blog.xispace.app/2023/05/New-Hexo-app-for-ChatGPT/" data-id="clszygxcm003ykm0m79w7gblv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%B7%A8%E5%B9%B3%E5%8F%B0/" rel="tag">跨平台</a></li></ul>
@@ -384,7 +389,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.xispace.app/2023/05/Glances%E6%98%AF%E4%B8%80%E5%80%8B%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%9A%84%E7%B3%BB%E7%B5%B1%E7%9B%A3%E8%A6%96%E5%B7%A5%E5%85%B7/" data-id="clrt7b5za001k120m1ir9afr4" class="article-share-link">Share</a>
+      <a data-url="https://blog.xispace.app/2023/05/Glances%E6%98%AF%E4%B8%80%E5%80%8B%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%9A%84%E7%B3%BB%E7%B5%B1%E7%9B%A3%E8%A6%96%E5%B7%A5%E5%85%B7/" data-id="clszygxbn001lkm0mec697oml" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/glances/" rel="tag">glances</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%B7%A8%E5%B9%B3%E5%8F%B0/" rel="tag">跨平台</a></li></ul>
@@ -434,7 +439,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.xispace.app/2021/09/Markdown%E5%BD%B1%E9%9F%B3/" data-id="clrt7b601003a120m5dt6070n" class="article-share-link">Share</a>
+      <a data-url="https://blog.xispace.app/2021/09/Markdown%E5%BD%B1%E9%9F%B3/" data-id="clszygxc9003ckm0mgqh6a0rr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li></ul>
@@ -483,7 +488,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.xispace.app/2021/09/Markdown%E5%88%86%E9%9A%94%E7%B7%9A/" data-id="clrt7b5zz0034120mdhjc1yrd" class="article-share-link">Share</a>
+      <a data-url="https://blog.xispace.app/2021/09/Markdown%E5%88%86%E9%9A%94%E7%B7%9A/" data-id="clszygxc60036km0m7s80h89o" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li></ul>
@@ -547,7 +552,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.xispace.app/2021/09/Markdown%E6%B8%85%E5%96%AE/" data-id="clrt7b603003f120mdwfr1odc" class="article-share-link">Share</a>
+      <a data-url="https://blog.xispace.app/2021/09/Markdown%E6%B8%85%E5%96%AE/" data-id="clszygxcb003hkm0mgjj05yni" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li></ul>
@@ -600,7 +605,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.xispace.app/2021/09/Markdown%E5%8D%80%E5%A1%8A%E5%BC%95%E8%A8%80/" data-id="clrt7b6000036120mfx27cu1c" class="article-share-link">Share</a>
+      <a data-url="https://blog.xispace.app/2021/09/Markdown%E5%8D%80%E5%A1%8A%E5%BC%95%E8%A8%80/" data-id="clszygxc70038km0mbh7pb4zb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li></ul>
@@ -639,12 +644,12 @@ ga('send', 'pageview');
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="This-is-an-H1"><a href="#This-is-an-H1" class="headerlink" title="This is an H1"></a>This is an H1</h1><h2 id="This-is-an-H2"><a href="#This-is-an-H2" class="headerlink" title="This is an H2"></a>This is an H2</h2><h3 id="This-is-an-H3"><a href="#This-is-an-H3" class="headerlink" title="This is an H3"></a>This is an H3</h3><h4 id="This-is-an-H4"><a href="#This-is-an-H4" class="headerlink" title="This is an H4"></a>This is an H4</h4><h5 id="This-is-an-H5"><a href="#This-is-an-H5" class="headerlink" title="This is an H5"></a>This is an H5</h5><h6 id="This-is-an-H6"><a href="#This-is-an-H6" class="headerlink" title="This is an H6"></a>This is an H6</h6><p>*literal asterisks*</p>
-<p><a href="mailto:&#97;&#100;&#100;&#x72;&#101;&#x73;&#x73;&#64;&#x65;&#x78;&#97;&#x6d;&#112;&#108;&#x65;&#x2e;&#99;&#x6f;&#x6d;">&#97;&#100;&#100;&#x72;&#101;&#x73;&#x73;&#64;&#x65;&#x78;&#97;&#x6d;&#112;&#108;&#x65;&#x2e;&#99;&#x6f;&#x6d;</a></p>
+<p><a href="mailto:&#x61;&#x64;&#100;&#x72;&#101;&#115;&#115;&#x40;&#101;&#x78;&#97;&#x6d;&#x70;&#108;&#101;&#x2e;&#x63;&#111;&#x6d;">&#x61;&#x64;&#100;&#x72;&#101;&#115;&#115;&#x40;&#101;&#x78;&#97;&#x6d;&#x70;&#108;&#101;&#x2e;&#x63;&#111;&#x6d;</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.xispace.app/2021/09/Markdown%E6%A8%99%E9%A1%8C/" data-id="clrt7b602003c120mcc6c94wg" class="article-share-link">Share</a>
+      <a data-url="https://blog.xispace.app/2021/09/Markdown%E6%A8%99%E9%A1%8C/" data-id="clszygxca003ekm0m5vogfxob" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li></ul>
@@ -691,7 +696,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.xispace.app/2021/09/Markdown%E7%9A%84%E7%9B%AE%E6%A8%99%E6%98%AF%E5%AF%A6%E7%8F%BE%E3%80%8C%E6%98%93%E8%AE%80%E6%98%93%E5%AF%AB%E3%80%8D/" data-id="clrt7b605003i120m6glx8eis" class="article-share-link">Share</a>
+      <a data-url="https://blog.xispace.app/2021/09/Markdown%E7%9A%84%E7%9B%AE%E6%A8%99%E6%98%AF%E5%AF%A6%E7%8F%BE%E3%80%8C%E6%98%93%E8%AE%80%E6%98%93%E5%AF%AB%E3%80%8D/" data-id="clszygxcc003kkm0mfn9ifk8w" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li></ul>
